@@ -17,18 +17,102 @@ html, body {
   background-color: #5f5f5f;
   color: #ffffff;
   user-select: none;
+  font-family: FuturaRoundDemi;
 }
 
 .up-panel {
-  padding: 10px;
+  padding: 10px 20px 10px 15px;
   width: 100%;
   height: 60px;
   background-color: #444444;
+  display: flex;
 }
 
 .Main {
   width: 200px;
   height: 40px;
   font-size: 35px;
-  font-family: FuturaRoundDemi;
+}
+
+.menu {
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  background-image: url("./assets/menu.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.TheMainPart {
+  display: flex;
+}
+
+.LessonsForAWeek {
+  margin: 30px 0px 0px 70px;
+  width: 700px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.lessons {
+  margin-top: 20px;
+  width: 700px;
+  background-color: #525151;
+  border-radius: 16px;
+  padding: 10px;
+}
+
+.DayOfTheWeek {
+  font-size: 25px;
+}
+
+.lesson {
+  font-size: 19px;
+  margin-top: 5px;
+  display: flex;
+}
+
+.small {
+  margin-left: 120px;
+  display: block;
+}
+
+.notes {
+  margin-top: 50px;
+  width: 700px;
+  background-color: #525151;
+  border-radius: 16px;
+  padding: 10px;
+}
+
+.NameNotes {
+  font-size: 25px;
+}
+
+.average-rating {
+  margin-top: 50px;
+  width: 700px;
+  height: 400px;
+  background-color: #525151;
+  border-radius: 16px;
+  padding: 10px;
+}
+
+.average-ratingName {
+  font-size: 25px;
+}
+
+input {
+  font-size: 16px;
+  margin-top: 10px;
+  background-color: #444444;
+  color: #fff;
+  border-radius: 12px;
+  height: 40px;
+  padding: 5px;
 }
