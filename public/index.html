@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../src/style.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
     <script
-      src="https://api-maps.yandex.ru/2.1/?apikey=8feb5289-f43e-46fb-9b3b-5633a4fc1f86&lang=en_US"
       type="text/javascript"
     ></script>
   </head>
@@ -12,93 +11,31 @@
 
     <header class="up-panel">
       <div class="Main">Главная</div>
-      <div class="menu"></div>
+      <button class="menu" name="menu"></button>
     </header>
 
-    <div class="TheMainPart">
-      <div class="LessonsForAWeek">
-
-        <div class="lessons">
-          <div class="DayOfTheWeek"> Понедельник 
-            <div class="lesson" id=""> 1. </div>
-            <div class="lesson" id=""> 2. </div>
-            <div class="lesson" id=""> 3. </div>
-            <div class="lesson" id=""> 4. </div>
-            <div class="lesson" id=""> 5. </div>
-            <div class="lesson" id=""> 6. </div>
-            <div class="lesson" id=""> 7. </div>
-            <input placeholder="Введите тест..."/>
-          </div>
-        </div>
-
-        <div class="lessons">
-          <div class="DayOfTheWeek"> Вторник 
-            <div class="lesson" id=""> 1. </div>
-            <div class="lesson" id=""> 2. </div>
-            <div class="lesson" id=""> 3. </div>
-            <div class="lesson" id=""> 4. </div>
-            <div class="lesson" id=""> 5. </div>
-            <div class="lesson" id=""> 6. </div>
-            <div class="lesson" id=""> 7. </div>
-            <input placeholder="Введите тест..."/>
-          </div>
-        </div>
-
-        <div class="lessons">
-          <div class="DayOfTheWeek"> Среда 
-            <div class="lesson" id=""> 1. </div>
-            <div class="lesson" id=""> 2. </div>
-            <div class="lesson" id=""> 3. </div>
-            <div class="lesson" id=""> 4. </div>
-            <div class="lesson" id=""> 5. </div>
-            <div class="lesson" id=""> 6. </div>
-            <div class="lesson" id=""> 7. </div>
-            <input placeholder="Введите тест..."/>
-          </div>
-        </div>
-
-        <div class="lessons">
-          <div class="DayOfTheWeek"> Четверг 
-            <div class="lesson" id=""> 1. </div>
-            <div class="lesson" id=""> 2. </div>
-            <div class="lesson" id=""> 3. </div>
-            <div class="lesson" id=""> 4. </div>
-            <div class="lesson" id=""> 5. </div>
-            <div class="lesson" id=""> 6. </div>
-            <div class="lesson" id=""> 7. </div>
-            <input placeholder="Введите тест..."/>
-          </div>
-        </div>
-
-        <div class="lessons">
-          <div class="DayOfTheWeek"> Пятница 
-            <div class="lesson" id=""> 1. </div>
-            <div class="lesson" id=""> 2. </div>
-            <div class="lesson" id=""> 3. </div>
-            <div class="lesson" id=""> 4. </div>
-            <div class="lesson" id=""> 5. </div>
-            <div class="lesson" id=""> 6. </div>
-            <div class="lesson" id=""> 7. </div>
-            <input placeholder="Введите тест..."/>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="small">
-        <div class="notes"> 
-          <div class="NameNotes"> Заметки </div>
-          <input placeholder="Введите тест..."/>
-        </div>
-  
-        <div class="average-rating"> 
-          <div class="average-ratingName"> Средний бал по всем предметам </div>
-  
-        </div>
-      </div>
-
+    <div class="menu-panel _inactive" id="menu-panelID">
+      <div class="avatar"></div>
+      <div class="name"> Андрей </div>
+      <div class="main-panel"> Главная </div>
+      <div class="evaluations-panel"> Оценки </div>
+      <div class="setting-panel"> Настройки </div>
     </div>
+
+    <main class="content" id="root">
+      <div class="TheMainPart">
+        <div  id="weekDays" class="LessonsForAWeek">
+        </div>
+
+        <div class="small">
+          <div class="notes" id="notes-container"></div>
     
-    <script src="index.ts"></script>
+          <div class="average-rating"> 
+            <div class="average-ratingName"> Средний бал по всем предметам </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
   </body>
 </html>
