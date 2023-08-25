@@ -43,6 +43,24 @@ const getInitState = () => {
         Thu: [],
         Fri: [],
       },
+      lesson: {
+        English: [],
+        Biology: [],
+        Geography: [],
+        ComputerScience: [],
+        History: [],
+        Literature: [],
+        Algebra: [],
+        Geometry: [],
+        Music: [],
+        OBZH: [],
+        SocialStudies: [],
+        Russian: [],
+        Physics: [],
+        PhysicalCulture: [],
+        French: [],
+        Chemistry: [],
+      },
     };
   }
   return JSON.parse(initialState);

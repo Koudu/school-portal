@@ -216,6 +216,11 @@ html, body {
   font-size: 19px;
   margin-top: 5px;
   display: flex;
+  word-break: break-all;
+}
+
+.InputBlock {
+  display: block;
 }
 
 .small {
@@ -254,16 +259,22 @@ html, body {
   font-size: 25px;
 }
 
-textarea {
-  width: 702px;
-  display: inline-table;
+select {
+  border-radius: 5px;
+  background-color: #444444;
+  color: #fff;
+}
+
+
+.InputArea {
+  width: 310px;
+  height: 40px;
   font-size: 16px;
   margin-top: 10px;
   background-color: #444444;
   color: #fff;
   border-radius: 12px;
   padding: 5px;
-  resize: vertical;
   border: 0;
 }
 
