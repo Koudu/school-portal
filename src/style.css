@@ -219,10 +219,6 @@ html, body {
   word-break: break-all;
 }
 
-.InputBlock {
-  display: block;
-}
-
 .small {
   margin-left: 120px;
   display: block;
@@ -267,8 +263,7 @@ select {
 
 
 .InputArea {
-  width: 310px;
-  height: 40px;
+  width: 510px;
   font-size: 16px;
   margin-top: 10px;
   background-color: #444444;
@@ -435,7 +430,7 @@ select {
 }
 
 @media (max-width: 1536px) {
-  textarea {
+  .InputArea {
     width: 552px;
   }
 }
@@ -597,7 +592,7 @@ select {
 }
 
 @media (max-width: 1080px) {
-  .TextInput  {
+  .InputArea  {
     font-size: 35px;
     width: 826px;
     height: 80px;
