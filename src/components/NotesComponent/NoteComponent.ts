@@ -1,4 +1,4 @@
-import addForm from "../AddForm/AddForm";
+import addFormNote from "../AddForm/AddFormNote";
 import NoteList from "../LessonsList/NoteList";
 import storeNote from "../../store/storeNote";
 import { addNoteAction } from "../../store/actionsNote";
@@ -26,7 +26,7 @@ export default function NotesComponent(props: ComponentProps): Component {
       listContainer = props.parentEl.querySelector(`#listNote-for-${props.id}`);
 
       if (formContainer) {
-        form = addForm({
+        form = addFormNote({
           id: `notes-form-${props.id}`,
           onSubmit,
           parentEl: formContainer,

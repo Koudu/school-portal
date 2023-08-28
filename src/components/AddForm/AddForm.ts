@@ -5,10 +5,11 @@ interface AddFormProps extends ComponentProps {
 export default function addForm(props: AddFormProps): Component {
   let form: HTMLFormElement | null;
   let input: HTMLInputElement | null;
+  let select: HTMLSelectElement | null;
   const submit = (event: Event) => {
     event.preventDefault();
-    if (input) {
-      props.onSubmit(input.innerText);
+    if (input && select && select.value !== "default") {
+      props.onSubmit(`${select.value}: ${input.innerText}`);
       input.innerText = "";
     }
   };
@@ -16,10 +17,10 @@ export default function addForm(props: AddFormProps): Component {
     render: () => {
       props.parentEl.innerHTML = `
       <form id="${props.id}">
-        <select>
-          <option selected> -- Выберите предмет -- </option>
-          <option value> Английский </option>
-          <option value> Биология </option>
+        <select id="select-${props.id}">
+          <option selected value="default"> -- Выберите предмет -- </option>
+          <option value="Английский"> Английский </option>
+          <option value="Биология"> Биология </option>
           <option value> География </option>
           <option value> Информатика </option>
           <option value> История </option>
@@ -44,6 +45,7 @@ export default function addForm(props: AddFormProps): Component {
     onRender: () => {
       form = props.parentEl.querySelector(`#${props.id}`);
       input = props.parentEl.querySelector(`#input-${props.id}`);
+      select = props.parentEl.querySelector(`#select-${props.id}`);
       form?.addEventListener("submit", submit);
     },
     onDelete: () => {

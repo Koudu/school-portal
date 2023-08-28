@@ -11,7 +11,7 @@ export default function lessonsList(props: lessonsListProps): Component {
         ${state.week[props.day]
           .map(
       (lesson: string, index: number) =>
-              `<div class="lesson"> ${index + 1}. ${lesson}</div>`
+              `<div class="lesson"> ${index + 1}. ${lesson} <form><button class="PlusBtn"></button></form></div>`
     )
           .join("")}
       `;

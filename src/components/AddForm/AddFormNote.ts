@@ -2,14 +2,14 @@ interface AddFormProps extends ComponentProps {
   onSubmit: (value: string) => void;
 }
 
-export default function addForm(props: AddFormProps): Component {
+export default function addFormNote(props: AddFormProps): Component {
   let form: HTMLFormElement | null;
   let input: HTMLInputElement | null;
   const submit = (event: Event) => {
     event.preventDefault();
     if (input) {
-      props.onSubmit(input.value);
-      input.value = "";
+      props.onSubmit(input.innerText);
+      input.innerText = "";
     }
   };
   return {
@@ -17,8 +17,8 @@ export default function addForm(props: AddFormProps): Component {
       props.parentEl.innerHTML = `
       <form id="${props.id}">
         <div class="TextInputBlock">
-          <textarea class="TextInputNote" id="input-${props.id}"  placeholder="Введите тест..."></textarea>
-          <input type="submit" class="addNote" value="Добавить" name="add" />
+          <div class="InputArea" id="input-${props.id}" contenteditable="true"></div>
+          <input type="submit" class="add" value="Добавить" name="add" />
         </div>
       </form>
     `;
