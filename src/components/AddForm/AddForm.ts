@@ -34,7 +34,7 @@ export default function addForm(props: AddFormProps): Component {
           <option value> Франц. язык </option>
           <option value> Химия </option>
         </select>
-        <div class="InputBlock">
+        <div class="TextInputBlock">
           <div class="InputArea" id="input-${props.id}" contenteditable="true"></div>
           <input type="submit" class="add" value="Добавить" name="add" />
         </div>

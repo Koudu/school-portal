@@ -16,8 +16,10 @@ export default function addForm(props: AddFormProps): Component {
     render: () => {
       props.parentEl.innerHTML = `
       <form id="${props.id}">
-        <textarea class="TextInputNote" id="input-${props.id}"  placeholder="Введите тест..."></textarea>
-        <input type="submit" class="addNote" value="Добавить" name="add" />
+        <div class="TextInputBlock">
+          <textarea class="TextInputNote" id="input-${props.id}"  placeholder="Введите тест..."></textarea>
+          <input type="submit" class="addNote" value="Добавить" name="add" />
+        </div>
       </form>
     `;
     },

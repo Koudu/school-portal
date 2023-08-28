@@ -271,11 +271,13 @@ select {
   border-radius: 12px;
   padding: 5px;
   border: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .add {
   width: 100px;
   height: 40px;
+  margin-left: 5px;
   font-size: 16px;
   cursor: pointer;
   font-size: 16px;
@@ -288,6 +290,10 @@ select {
 
 .add:hover {
   background-color: #383838;
+}
+
+.TextInputBlock {
+ display: flex;
 }
 
 
