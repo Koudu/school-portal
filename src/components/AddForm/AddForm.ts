@@ -21,19 +21,19 @@ export default function addForm(props: AddFormProps): Component {
           <option selected value="default"> -- Выберите предмет -- </option>
           <option value="Английский"> Английский </option>
           <option value="Биология"> Биология </option>
-          <option value> География </option>
-          <option value> Информатика </option>
-          <option value> История </option>
-          <option value> Литература </option>
-          <option value> Алгебра </option>
-          <option value> Геометрия </option>
-          <option value> Музыка </option>
-          <option value> Обществознание </option>
-          <option value> Рус. язык </option>
-          <option value> Физика </option>
-          <option value> Физ-ра </option>
-          <option value> Франц. язык </option>
-          <option value> Химия </option>
+          <option value="География"> География </option>
+          <option value="Информатика"> Информатика </option>
+          <option value="История"> История </option>
+          <option value="Литература"> Литература </option>
+          <option value="Алгебра"> Алгебра </option>
+          <option value="Геометрия"> Геометрия </option>
+          <option value="Музыка"> Музыка </option>
+          <option value="Обществознание"> Обществознание </option>
+          <option value="Русский язык"> Рус. язык </option>
+          <option value="Физика"> Физика </option>
+          <option value="Физ-ра"> Физ-ра </option>
+          <option value="Франц. язык"> Франц. язык </option>
+          <option value="Химия"> Химия </option>
         </select>
         <div class="TextInputBlock">
           <div class="InputArea" id="input-${props.id}" contenteditable="true"></div>

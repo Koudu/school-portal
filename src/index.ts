@@ -1,6 +1,8 @@
 import WeekComponent from "./components/WeekComponent/WeekComponent";
 import NotesComponent from "./components/NotesComponent/NoteComponent";
+import store from "./store/store";
 import "./style.css";
+import { deleteLessonAction } from "./store/actions";
 
 const days = document.getElementById("weekDays");
 const notesContainer = document.getElementById("notes-container");
@@ -39,7 +41,14 @@ const body = document.querySelector("body");
 const MenuPanelID = document.getElementById("menu-panelID");
 
 body?.addEventListener("click", (e) => {
-  const name = e.target.getAttribute("name");
+  if (!e.target) {
+    return;
+  }
+  const name = (e.target as HTMLButtonElement).getAttribute("name");
+
+  if (!name) {
+    return;
+  }
   if (name === "menu" && MenuPanelID) {
     if (MenuPanelID?.classList.contains("_inactive")) {
       MenuPanelID.classList.remove("_inactive");
@@ -48,5 +57,11 @@ body?.addEventListener("click", (e) => {
     }
     MenuPanelID.classList.add("_inactive");
     MenuPanelID.classList.remove("_active");
+  }
+
+  const [listType, listName, index] = name.split("-");
+
+  if (listType === "week") {
+    store.dispatch(deleteLessonAction(listName, Number(index)));
   }
 });
