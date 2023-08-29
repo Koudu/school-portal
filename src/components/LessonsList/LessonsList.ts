@@ -6,6 +6,7 @@ interface lessonsListProps extends ComponentProps {
 
 export default function lessonsList(props: lessonsListProps): Component {
   let usub: () => void;
+  // let lessonState: "edit" | "read" = "read";
   const onChangeState = (state: State) => {
     props.parentEl.innerHTML = `
         ${state.week[props.day]
