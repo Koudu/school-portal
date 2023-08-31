@@ -1,11 +1,13 @@
-import NotesComponent from "../components/NotesComponent/NoteComponent";
-import WeekComponent from "../components/WeekComponent/WeekComponent";
+import BlockComponent from "../components/WeekComponent/BlockMenuComponent";
+import AccountComponent from "../components/WeekComponent/AccountBlockComponent";
+import ThemeComponent from "../components/WeekComponent/ThemeBlockComponent";
 
-export default function MainPage(props: ComponentProps): Component {
+export default function SettingsPage(props: ComponentProps): Component {
   let menu: HTMLDivElement | null = null;
-  let blockContainer: HTMLDivElement | null = null;
+  let blockAccountContainer: HTMLDivElement | null = null;
+  let blockThemeContainer: HTMLDivElement | null = null;
 
-  const components: Component[] = [];
+  const componentsBlock: Component[] = [];
   return {
     render() {
       props.parentEl.innerHTML = `
@@ -14,13 +16,13 @@ export default function MainPage(props: ComponentProps): Component {
           <button class="theme"> Темы </button>
         </div>
 
-        <div class="BigBlock" id="big-block">
-        <div class="AccountBlock">
+        <div class="BigBlock">
+        <div class="AccountBlock" id="account-block">
           <div class="AccountAvatar"></div>
           <div class="AccountName"></div>
         </div>
         
-        <div class="ThemeBlock">
+        <div class="ThemeBlock" id="theme-block">
           <button class="DarkTheme"></button>
           <button class="LightTheme"></button>
         </div>
@@ -28,36 +30,43 @@ export default function MainPage(props: ComponentProps): Component {
     },
     onRender() {
       menu = props.parentEl.querySelector("#block-menu");
-      blockContainer = props.parentEl.querySelector("#big-block");
+      blockAccountContainer = props.parentEl.querySelector("#account-block");
+      blockThemeContainer = props.parentEl.querySelector("#theme-block");
 
       if (menu) {
-        const createBlockMenu = (day: string, id: string, title: string) => {
-          const element = document.createElement("div");
-          const weekComponent = WeekComponent({
-            day,
-            id,
-            title,
-            parentEl: element,
-          });
-          weekComponent.render();
-          weekComponent.onRender();
-          menu!.appendChild(element);
-          return weekComponent;
-        };
-
-
-      if (blockContainer) {
-        const notesComponent = NotesComponent({
-          id: "notes",
-          parentEl: blockContainer,
+        const menuComponent = BlockComponent({
+          id: "block-menu",
+          parentEl: BlockComponent,
         });
-        notesComponent.render();
-        notesComponent.onRender();
-        components.push(notesComponent)
+        menuComponent.render();
+        menuComponent.onRender();
+        componentsBlock.push(menuComponent)
+
+
+          if (blockAccountContainer) {
+            const accountComponent = AccountComponent({
+              id: "account-block",
+              parentEl: AccountComponent,
+            });
+            accountComponent.render();
+            accountComponent.onRender();
+            componentsBlock.push(accountComponent)
+          }
+
+        if (blockThemeContainer) {
+          const themeComponent = ThemeComponent({
+            id: "theme-block",
+            parentEl: ThemeComponent,
+          });
+          themeComponent.render();
+          themeComponent.onRender();
+          componentsBlock.push(themeComponent)
+        }
       }
+
+      onDelete() {
+        componentsBlock.forEach((c) => c.onDelete());
+      };
     },
-    onDelete() {
-      components.forEach((c) => c.onDelete());
-    },
-  };
+  }
 }
