@@ -110,6 +110,8 @@ html, body {
   overflow:hidden;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
+  color: #fff;
 }
 
 .main-panel:before {
@@ -140,6 +142,8 @@ html, body {
   overflow:hidden;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
+  color: #fff;
 }
 
 .evaluations-panel:before {
@@ -170,6 +174,8 @@ html, body {
   overflow:hidden;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
+  color: #fff;
 }
 
 .setting-panel:before {

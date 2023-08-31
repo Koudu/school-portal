@@ -3,12 +3,12 @@ import lessonsList from "../LessonsList/LessonsList";
 import store from "../../store/store";
 import { addLessonAction } from "../../store/actions";
 
-interface ThemeComponent extends ComponentProps {
+interface ThemeComponentProps extends ComponentProps {
   title: string;
   day: string;
 }
 
-export default function ThemeComponent(props: ThemeComponent): Component {
+export default function ThemeComponent(props: ThemeComponentProps): Component {
   let formContainer: HTMLDivElement | null;
   let form: Component | null;
 

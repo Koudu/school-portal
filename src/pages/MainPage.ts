@@ -59,7 +59,7 @@ export default function MainPage(props: ComponentProps): Component {
         });
         notesComponent.render();
         notesComponent.onRender();
-        components.push(notesComponent)
+        components.push(notesComponent);
       }
     },
     onDelete() {
